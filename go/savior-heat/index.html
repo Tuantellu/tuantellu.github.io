@@ -6,6 +6,9 @@
 var u="https://saviorheat.com?sca_ref=11873478.Nx5ZRo8Oya",s=(new URLSearchParams(location.search).get('s')||'x').replace(/\W/g,'').slice(0,10),done=0;
 function go(){if(!done){done=1;location.replace(u)}}
 var i=new Image();i.onload=i.onerror=go;
+// Người thật bấm từ comment mở bằng trình duyệt trong app FB/IG/Messenger hoặc có trang nguồn;
+// còn lại (thường là máy quét link của Facebook) đếm riêng vào <nguồn>-bot
+if(!(/FBAN|FBAV|FB_IAB|Instagram|Messenger/i.test(navigator.userAgent)||document.referrer)||navigator.webdriver)s+='-bot';
 i.src='https://dailyfinds.goatcounter.com/count?p='+encodeURIComponent('/go/savior-heat/'+s)+'&t='+encodeURIComponent("Savior Heat")+'&r='+encodeURIComponent(document.referrer)+'&rnd='+Math.random();
 setTimeout(go,700);
 </script></head>
